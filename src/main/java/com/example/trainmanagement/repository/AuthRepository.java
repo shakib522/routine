@@ -12,6 +12,6 @@ import java.util.Optional;
 public interface AuthRepository extends JpaRepository<User,Long> {
     Optional<User> findByEmail(String email);
 
-    @Query(value="SELECT * FROM train.user u WHERE u.user_id = ?1",nativeQuery = true )
-    Optional<User> findUserById(Long Id);
+//    @Query(value="SELECT * FROM train.user u WHERE u.user_id = ?1",nativeQuery = true )
+//    Optional<User> findUserById(Long Id);
 }
