@@ -31,9 +31,6 @@ public class SecurityConfiguration {
                                         "/api/v1/auth/login",
                                         "/api/v1/welcome"
                                 ).permitAll()
-                        .requestMatchers(HttpMethod.GET, "/api/v1/books").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/api/v1/admin/books").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/api/v1/books/category").permitAll()
                         .requestMatchers("/api/v1/admin/**").hasAuthority("ADMIN")
                         .anyRequest()
                         .authenticated())
