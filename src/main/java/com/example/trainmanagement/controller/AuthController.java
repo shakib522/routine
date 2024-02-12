@@ -2,6 +2,8 @@ package com.example.trainmanagement.controller;
 
 
 import com.example.trainmanagement.error.DefaultException;
+import com.example.trainmanagement.model.LoginRequest;
+import com.example.trainmanagement.model.LoginResponse;
 import com.example.trainmanagement.model.RegisterRequest;
 import com.example.trainmanagement.model.RegisterResponse;
 import com.example.trainmanagement.service.AuthService;
@@ -22,5 +24,10 @@ public class AuthController {
     @PostMapping("/register")
     public ResponseEntity<RegisterResponse> register(@RequestBody RegisterRequest registerRequest) throws DefaultException {
         return ResponseEntity.status(201).body(authService.register(registerRequest));
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest loginRequest) throws DefaultException{
+        return ResponseEntity.status(200).body(authService.login(loginRequest));
     }
 }
