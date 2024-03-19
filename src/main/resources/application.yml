@@ -13,8 +13,8 @@ spring:
       on-profile: dev
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    password: shakib19
-    url: jdbc:mysql://localhost:3306/train
+    password: 1234
+    url: jdbc:mysql://localhost:3306/routine
     username: root
 
   jpa:
