@@ -6,7 +6,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class TrainManagementApplication extends SpringBootServletInitializer {
+public class RoutineManagementApplication extends SpringBootServletInitializer {
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
@@ -14,7 +14,7 @@ public class TrainManagementApplication extends SpringBootServletInitializer {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(TrainManagementApplication.class, args);
+        SpringApplication.run(RoutineManagementApplication.class, args);
     }
 
 }

@@ -18,10 +18,9 @@ import org.springframework.web.bind.annotation.*;
 public class AuthController {
 
     private final AuthService authService;
-
     @PostMapping("/auth/register")
     public ResponseEntity<RegisterResponse> register(@RequestBody RegisterRequest registerRequest) throws DefaultException {
-        return ResponseEntity.status(201).body(authService.register(registerRequest));
+        return ResponseEntity.status(201).body(authService. register(registerRequest));
     }
 
     @PostMapping("/auth/login")
