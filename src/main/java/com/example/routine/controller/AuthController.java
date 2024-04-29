@@ -2,10 +2,8 @@ package com.example.routine.controller;
 
 
 import com.example.routine.error.DefaultException;
-import com.example.routine.model.LoginRequest;
-import com.example.routine.model.LoginResponse;
-import com.example.routine.model.RegisterRequest;
-import com.example.routine.model.RegisterResponse;
+import com.example.routine.error.DefaultMessage;
+import com.example.routine.model.*;
 import com.example.routine.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -26,5 +24,10 @@ public class AuthController {
     @PostMapping("/auth/login")
     public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest loginRequest) throws DefaultException{
         return ResponseEntity.status(200).body(authService.login(loginRequest));
+    }
+
+    @PutMapping("/admin/addTeacher")
+    public ResponseEntity<DefaultMessage> addTeacher(@RequestBody MakeTeacher makeTeacher) throws DefaultException{
+        return ResponseEntity.status(200).body(authService.makeTeacher(makeTeacher));
     }
 }
