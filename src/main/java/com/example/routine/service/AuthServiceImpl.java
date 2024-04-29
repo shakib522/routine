@@ -27,7 +27,7 @@ public class AuthServiceImpl implements AuthService{
     @Override
     public RegisterResponse register(RegisterRequest registerRequest) {
         if (authRepository.findByStudentId(registerRequest.getStudent_id()).isPresent()) {
-            throw new DefaultException("Student id already exist", HttpStatus.BAD_REQUEST.value());
+            throw new DefaultException("The associated id already exist", HttpStatus.BAD_REQUEST.value());
         }
         val user = User.builder()
                 .name(registerRequest.getName())
@@ -49,7 +49,7 @@ public class AuthServiceImpl implements AuthService{
 
     @Override
     public LoginResponse login(LoginRequest loginRequest) {
-       val user= authRepository.findByStudentId(loginRequest.getStudent_id());
+       val user= authRepository.findByEmail(loginRequest.getEmail());
        if(user.isEmpty()){
            throw new DefaultException("User not found with this student id",404);
        }
@@ -57,7 +57,7 @@ public class AuthServiceImpl implements AuthService{
            throw new DefaultException("Password is incorrect",HttpStatus.BAD_REQUEST.value());
        }
        authManager.authenticate(new UsernamePasswordAuthenticationToken(
-               loginRequest.getStudent_id(),
+               loginRequest.getEmail(),
                loginRequest.getPassword(),
                user.get().getAuthorities()
        ));
