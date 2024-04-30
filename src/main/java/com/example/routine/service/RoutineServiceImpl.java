@@ -28,4 +28,9 @@ public class RoutineServiceImpl implements RoutineService{
     public List<Routine> getRoutineByYearAndDay(String day, Integer year) {
         return repository.getRoutineByDayAndYear(day,year);
     }
+
+    @Override
+    public List<Routine> getRoutineByTeacher(String name) {
+        return repository.getRoutineByTeacher(name);
+    }
 }

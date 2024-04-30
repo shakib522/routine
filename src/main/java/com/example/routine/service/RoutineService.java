@@ -8,4 +8,6 @@ import java.util.List;
 public interface RoutineService {
     DefaultMessage createRoutine(Routine routineRequest);
     List<Routine> getRoutineByYearAndDay(String day,Integer year);
+
+    List<Routine> getRoutineByTeacher(String name);
 }

@@ -31,6 +31,7 @@ public class SecurityConfiguration {
                                         "/api/v1/welcome"
                                 ).permitAll()
                         .requestMatchers("/api/v1/admin/**").hasAuthority("ADMIN")
+                        .requestMatchers("/api/v1/teacher/**").hasAuthority("TEACHER")
                         .anyRequest()
                         .authenticated())
                 .sessionManagement((session) -> session
