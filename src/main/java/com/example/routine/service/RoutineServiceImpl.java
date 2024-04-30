@@ -6,6 +6,8 @@ import com.example.routine.repository.RoutineRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class RoutineServiceImpl implements RoutineService{
@@ -20,5 +22,10 @@ public class RoutineServiceImpl implements RoutineService{
                 .status("created")
                 .message("Routine created successfully")
                 .build();
+    }
+
+    @Override
+    public List<Routine> getRoutineByYearAndDay(String day, Integer year) {
+        return repository.getRoutineByDayAndYear(day,year);
     }
 }
