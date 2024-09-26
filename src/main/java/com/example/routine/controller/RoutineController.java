@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin
 @RequestMapping("api/v1")
 @RequiredArgsConstructor
+@CrossOrigin
 public class RoutineController {
 
 
