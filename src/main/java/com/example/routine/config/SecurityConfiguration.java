@@ -28,7 +28,8 @@ public class SecurityConfiguration {
                                 (
                                         "/api/v1/auth/register",
                                         "/api/v1/auth/login",
-                                        "/api/v1/welcome"
+                                        "/api/v1/welcome",
+                                        "/api/v1/admin/getAllRoutine/**"
                                 ).permitAll()
                         .requestMatchers("/api/v1/admin/**").hasAuthority("ADMIN")
                         .requestMatchers("/api/v1/teacher/**").hasAuthority("TEACHER")

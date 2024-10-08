@@ -25,6 +25,7 @@ public class User implements UserDetails {
     private String name;
     @Column(name = "email",unique = true)
     private String email;
+    private Integer year;
     @Column(unique = true)
     private String student_id;
     @Getter

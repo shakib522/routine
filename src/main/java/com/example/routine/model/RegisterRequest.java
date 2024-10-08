@@ -15,4 +15,5 @@ public class RegisterRequest {
     public String email;
     public String password;
     public String student_id;
+    public Integer year;
 }

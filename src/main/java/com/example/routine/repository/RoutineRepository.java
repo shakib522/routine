@@ -13,7 +13,7 @@ public interface RoutineRepository extends JpaRepository<Routine, Long> {
     @Query(value = "SELECT * FROM routine.routine r where r.day=?1 and r.year=?2 ", nativeQuery = true)
     List<Routine> getRoutineByDayAndYear(String day, Integer year);
 
-    @Query(value = "SELECT * FROM routine.routine r where r.course_teacher LIKE CONCAT(?1, '%')", nativeQuery = true)
+    @Query(value = "SELECT * FROM routine.routine r where r.course_teacher LIKE %?1%", nativeQuery = true)
     List<Routine> getRoutineByTeacher(String name);
 
     @Query(value = "SELECT * FROM routine.routine r where r.day=?1 order by r.year , r.start_time , r.end_time desc", nativeQuery = true)

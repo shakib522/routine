@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 public class RegisterResponse {
     public String token;
     public String name;
+    public Integer year;
     public String email;
     public String role;
     public String student_id;

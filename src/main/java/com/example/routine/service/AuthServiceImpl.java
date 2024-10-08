@@ -34,6 +34,7 @@ public class AuthServiceImpl implements AuthService {
                 .name(registerRequest.getName())
                 .email(registerRequest.getEmail())
                 .student_id(registerRequest.getStudent_id())
+                .year(registerRequest.getYear())
                 .password(passwordEncoder.encode(registerRequest.getPassword()))
                 .role(Role.USER)
                 .build();
@@ -44,6 +45,7 @@ public class AuthServiceImpl implements AuthService {
                 .email(user.getEmail())
                 .role(user.getRole().name())
                 .name(user.getName())
+                .year(user.getYear())
                 .student_id(user.getStudent_id())
                 .build();
     }
