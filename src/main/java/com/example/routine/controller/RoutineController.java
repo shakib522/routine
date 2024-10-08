@@ -34,4 +34,14 @@ public class RoutineController {
         return ResponseEntity.status(200).body(routineService.getRoutineByYearAndDay(day,year));
     }
 
+    @PutMapping("/admin/editRoutine/{id}")
+    public ResponseEntity<DefaultMessage> editRoutine(@RequestBody Routine routineRequest,@PathVariable("id")Long id){
+        return ResponseEntity.status(200).body(routineService.editRoutine(routineRequest,id));
+    }
+
+    @GetMapping("/admin/getAllRoutine/{day}")
+    public ResponseEntity<List<Routine>> getAllRoutineByDay(@PathVariable String day){
+        return ResponseEntity.status(200).body(routineService.getAllRoutineByDay(day));
+    }
+
 }

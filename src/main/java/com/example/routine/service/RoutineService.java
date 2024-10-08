@@ -10,4 +10,8 @@ public interface RoutineService {
     List<Routine> getRoutineByYearAndDay(String day,Integer year);
 
     List<Routine> getRoutineByTeacher(String name);
+
+    DefaultMessage editRoutine(Routine routineRequest,Long id);
+
+    List<Routine> getAllRoutineByDay(String day);
 }

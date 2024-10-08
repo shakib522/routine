@@ -33,4 +33,27 @@ public class RoutineServiceImpl implements RoutineService{
     public List<Routine> getRoutineByTeacher(String name) {
         return repository.getRoutineByTeacher(name);
     }
+
+    @Override
+    public DefaultMessage editRoutine(Routine routineRequest, Long id) {
+        Routine routine = repository.findById(id).get();
+        routine.setCourse_code(routineRequest.getCourse_code());
+        routine.setCourse_name(routineRequest.getCourse_name());
+        routine.setCourse_teacher(routineRequest.getCourse_teacher());
+        routine.setDay(routineRequest.getDay());
+        routine.setEnd_time(routineRequest.getEnd_time());
+        routine.setStart_time(routineRequest.getStart_time());
+        routine.setYear(routineRequest.getYear());
+        repository.save(routine);
+        return DefaultMessage.builder()
+                .statusCode(200)
+                .status("ok")
+                .message("Routine updated successfully")
+                .build();
+    }
+
+    @Override
+    public List<Routine> getAllRoutineByDay(String day) {
+        return repository.getRoutineByDay(day);
+    }
 }
