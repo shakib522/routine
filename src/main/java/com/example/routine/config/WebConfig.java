@@ -1,5 +1,5 @@
-//package com.example.trainmanagement.config;
 //
+// package com.example.routine.config;
 //import org.springframework.boot.web.servlet.FilterRegistrationBean;
 //import org.springframework.context.annotation.Bean;
 //import org.springframework.context.annotation.Configuration;
@@ -20,12 +20,19 @@
 //    private static final int CORS_FILTER_ORDER = -102;
 //
 //    @Bean
-//    public FilterRegistrationBean corsFilter() {
+//    public FilterRegistrationBean<CorsFilter> corsFilterRegistrationBean() {
+//        FilterRegistrationBean<CorsFilter> registrationBean = new FilterRegistrationBean<>(corsFilter());
+//        registrationBean.setOrder(CORS_FILTER_ORDER); // set the order
+//        return registrationBean;
+//    }
+//
+//    @Bean
+//    public CorsFilter corsFilter() {
 //        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 //        CorsConfiguration config = new CorsConfiguration();
 //        config.setAllowCredentials(true);
-//        config.setAllowedOrigins(Arrays.asList("http://localhost:5173","http://146.190.160.22:80","http://146.190.160.22",
-//                "http://146.190.160.22:81","http://146.190.160.22:1","http://booksmark.me/"));
+//        config.setAllowedOrigins(Arrays.asList("http://localhost:3000","http://146.190.160.22:80","http://146.190.160.22",
+//                "http://192.168.0.189","http://27.147.204.210"));
 //        config.setAllowedHeaders(Arrays.asList(
 //                HttpHeaders.AUTHORIZATION,
 //                HttpHeaders.CONTENT_TYPE,
@@ -38,10 +45,11 @@
 //                HttpMethod.DELETE.name()));
 //        config.setMaxAge(MAX_AGE);
 //        source.registerCorsConfiguration("/**", config);
-//        FilterRegistrationBean bean = new FilterRegistrationBean(new CorsFilter(source));
+//        CorsFilter bean = new CorsFilter(source);
 //
 //        // should be set order to -100 because we need to CorsFilter before SpringSecurityFilter
-//        bean.setOrder(CORS_FILTER_ORDER);
+//        //bean.setOrder(CORS_FILTER_ORDER);
+//
 //        return bean;
 //    }
 //}

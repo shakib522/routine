@@ -1,6 +1,5 @@
 package com.example.routine.model;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,10 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class RegisterRequest {
-    public String name;
-    public String email;
-    public String password;
-    public String student_id;
-    public Integer year;
+public class MakeTeacher {
+    String role;
+    String email;
 }
